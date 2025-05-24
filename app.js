@@ -25,6 +25,17 @@ app.get('/users', async (req, res) => {
   }
 });
 
+app.get('/fake/users', (req, res) => {
+  const fakeUsers = [
+    { id: 1, name: 'John Doe', email: 'john.doe@example.com' },
+    { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com' },
+    { id: 3, name: 'Bob Johnson', email: 'bob.johnson@example.com' },
+  ];
+
+  res.status(200).json(fakeUsers);
+});
+
+
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
